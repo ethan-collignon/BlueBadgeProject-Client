@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
-import Auth from './components/site/Auth';
+import Home from './components/site/Auth1';
 import Navbar from './components/site/Navbar'
 import ReviewIndex from './components/pagecomponents/Review/ReviewIndex';
 import Splash from './components/site/SplashPage2';
@@ -15,7 +15,7 @@ function App() {
       setSessionToken(localStorage.getItem('token'))
     }
   }, [])
-const updateLocalStorage = (newToken) => {
+const updateToken = (newToken) => {
   localStorage.setItem('token', newToken);
   setSessionToken(newToken);
   console.log(sessionToken); //eli was missing this. Not sure if we need this or not 
@@ -27,7 +27,7 @@ const updateLocalStorage = (newToken) => {
 
   const protectedView = () => {
     return(sessionToken) === localStorage.getItem('token') ? <ReviewIndex token={sessionToken} />
-    : <Auth updateLocalStorage={sessionToken} /> //This is a combo code from Workoutlog and Eli's
+    : <Home updateToken={updateToken} /> //This is a combo code from Workoutlog and Eli's
   }
 
   return (
