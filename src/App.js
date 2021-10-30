@@ -2,9 +2,12 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import {BroswerRouter as Router} from 'react-router-dom';
-import Home from './components/site/Home1';
-// import Navbar from './components/Navbar/Navbar';
-// import Auth from './components/Auth/Auth';
+import Auth from './components/site/Auth';
+import ReviewIndex from './components/pagecomponents/Review/ReviewIndex';
+import Splash from './components/site/SplashPage2';
+
+// import Auth from './components/site/Auth';
+// import Navbar from './components/site/Navbar';
 
 function App() {
   const [sessionToken, setSessionToken] = useState(undefined);
@@ -20,7 +23,7 @@ const updateLocalStorage = (newToken) => {
 };
 
   const viewConductor = () => {
-    return sessionToken !== undefined ? <Home updateLocalStorage={updateLocalStorage} /> : <Home updateLocalStorage ={updateLocalStorage} />;
+    return sessionToken !== undefined ? <Auth updateLocalStorage={updateLocalStorage} /> : <Splash updateLocalStorage ={updateLocalStorage} />;
   };
   return (
     <div className="App">

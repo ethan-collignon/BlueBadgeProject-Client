@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const Home = (props) => {
+const Auth = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState(true);
@@ -73,4 +73,4 @@ const handleSubmit = event => {
     )
 }
 
-export default Home;
+export default Auth;
