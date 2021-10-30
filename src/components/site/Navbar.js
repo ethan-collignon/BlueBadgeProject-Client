@@ -4,7 +4,7 @@ import SplashPage from './SplashPage2';
 import SearchPage from './SearchPage3';
 import MyReviews from './MyReviews4'
 
-const Navbar = () => {
+const Nav = () => {
     return(
         <div className='navbar'>
             <div className='navbar-list-styling'>
@@ -27,5 +27,5 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Nav
 
