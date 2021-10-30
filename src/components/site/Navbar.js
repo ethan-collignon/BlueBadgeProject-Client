@@ -1,5 +1,5 @@
 import { Route, Link, Switch } from "react-router-dom";
-import Home from './Home1';
+import Home from './Auth1';
 import SplashPage from './SplashPage2';
 import SearchPage from './SearchPage3';
 import MyReviews from './MyReviews4'

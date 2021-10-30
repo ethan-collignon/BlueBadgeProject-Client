@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
-import Home from './components/site/Home1';
+import Auth from './components/site/Auth';
 import Navbar from './components/site/Navbar'
-// import Auth from './components/Auth/Auth';
+import ReviewIndex from './components/pagecomponents/Review/ReviewIndex';
+import Splash from './components/site/SplashPage2';
 
 function App() {
   const [sessionToken, setSessionToken] = useState(undefined);
