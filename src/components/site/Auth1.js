@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-const Home = (props) => {
+
+const Auth = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState(true);
@@ -40,7 +41,7 @@ const handleSubmit = event => {
         }),
     })
     .then(response => response.json())
-    .then(json => props.updateLocalStorage(json.sessionToken))
+    .then(json => props.updateToken(json.sessionToken))
     .catch(err => console.log(err))
 }
     return (
@@ -62,4 +63,4 @@ const handleSubmit = event => {
         </div>
     )
 }
-export default Home;
+export default Auth;
