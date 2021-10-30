@@ -17,17 +17,24 @@ function App() {
 const updateLocalStorage = (newToken) => {
   localStorage.setItem('token', newToken);
   setSessionToken(newToken);
+  console.log(sessionToken); //eli was missing this. Not sure if we need this or not 
 };
 
-  const viewConductor = () => {
-    return sessionToken !== undefined ? <Home updateLocalStorage={updateLocalStorage} /> : <Home updateLocalStorage ={updateLocalStorage} />;
-  };
+  // const viewConductor = () => {
+  //   return sessionToken !== undefined ? <Home updateLocalStorage={updateLocalStorage} /> : <Home updateLocalStorage ={updateLocalStorage} />;
+  // };
+
+  const protectedView = () => {
+    return(sessionToken) === localStorage.getItem('token') ? <ReviewIndex token={sessionToken} />
+    : <Auth updateLocalStorage={sessionToken} /> //This is a combo code from Workoutlog and Eli's
+  }
+
   return (
     <div className="App">
     <Router>
       <Navbar />
     </Router>
-      {viewConductor()}
+      {protectedView()}
     </div>
   );
 }
