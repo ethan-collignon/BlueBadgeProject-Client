@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-// import CreateReview from './CreateReview'; Jess's file
-import ReviewCreate from '../ReviewCreate'
-// import ReviewTable from './ReviewTable';
+import ReviewTable from './ReviewTable';
 import ReviewEdit from './EditReview';
+
 const ReviewIndex = (props) => {  
     const [reviews, setReviews] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
@@ -36,12 +35,12 @@ const ReviewIndex = (props) => {
     return(
         <Container>
             <Row>
-                <Col md="3">
+                {/* <Col md="3">
                     <ReviewCreate fetchReviews={fetchReviews} token={props.token}/>
-                </Col>
-                {/* <Col md="9">
-                    <ReviewTable reviews={reviews} editUpdateReview={editUpdateReview} updateOn={updateOn} fetchReviews={fetchReviews} token={props.token}/>
                 </Col> */}
+                <Col md="9">
+                    <ReviewTable reviews={reviews} editUpdateReview={editUpdateReview} updateOn={updateOn} fetchReviews={fetchReviews} token={props.token}/>
+                </Col>
                 {updateActive ? <ReviewEdit reviewToUpdate={reviewToUpdate} updateOff={updateOff} token={props.token} fetchWorkouts={fetchReviews}/> : <></>}
             </Row>
         </Container>

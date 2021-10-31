@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import Nav from './Navbar';
+import ReviewCreate from '../pagecomponents/Review/ReviewIndex'
+
 
 const MyReviews = () => {
- <div>
- </div>
+ 
     return (
-        Nav
+        <div>
+            <ReviewCreate />
+        </div>
     )
 }
 

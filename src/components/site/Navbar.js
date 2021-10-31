@@ -4,6 +4,7 @@ import SplashPage from './SplashPage2';
 import SearchPage from './SearchPage3';
 import MyReviews from './MyReviews4'
 
+
 const Nav = () => {
     return(
         <div className='navbar'>
@@ -18,7 +19,7 @@ const Nav = () => {
            <div className='navbar-route'>
                <Switch>
                    {/* <Route exact path='/home'><Home /></Route> */}
-                   <Route exact path='/SearchPage3'><SearchPage /></Route>
+                   {/* <Route exact path='/SearchPage3'><SearchPage /></Route> */}
                    <Route exact path='/SplashPage2'><SplashPage /></Route>
                    <Route exact path='/MyReviews4'><MyReviews /></Route> 
                </Switch>

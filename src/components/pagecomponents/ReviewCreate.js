@@ -56,4 +56,4 @@ return (
     )
 }
 
-export default ReviewCreate
+export default ReviewCreate;

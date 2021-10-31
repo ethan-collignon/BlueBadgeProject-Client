@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
-const ReviewTable = (props) => {
+
+    const ReviewTable = (props) => {
     const deleteReview = (review) => {
         fetch(`http://localhost:3001/review/${props.review.id}`, {
             method: 'DELETE',
