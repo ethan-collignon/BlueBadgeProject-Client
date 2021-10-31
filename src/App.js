@@ -25,7 +25,7 @@ function App() {
   console.log(sessionToken);
 };
 
-  const clearToken = () => {
+  const clearLocalStorage = () => {
     localStorage.clear();
     setSessionToken('');
   }
@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       {protectedView()}
     <Router>
-      <Nav />
+      <Nav clearLocalStorage={clearLocalStorage}/>
     </Router>
       
     </div>

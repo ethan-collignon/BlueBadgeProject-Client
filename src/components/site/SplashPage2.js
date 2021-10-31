@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ReviewCreate from '../pagecomponents/ReviewCreate';
+import ReviewCreate from '../pagecomponents/Review/ReviewCreate';
 
 
 const Splash = () => {
