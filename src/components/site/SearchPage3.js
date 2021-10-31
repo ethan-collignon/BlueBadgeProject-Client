@@ -1,2 +1,13 @@
-// import ReviewCreate from "../pagecomponents/ReviewCreate";
-// import Navbar from './components/site/Navbar'
+import React, {useState} from 'react';
+import Nav from './Navbar';
+
+const SearchPage = () => {
+ <div>
+ </div>
+    return (
+        Nav
+    )
+}
+
+export default SearchPage;
+
