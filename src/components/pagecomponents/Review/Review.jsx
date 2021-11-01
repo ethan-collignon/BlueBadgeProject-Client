@@ -3,12 +3,12 @@ import { Table, Button } from 'reactstrap';
 import ReviewEdit from './EditReview';
 
 const ReviewTable = (props) => {
-    const deleteReview = (id) => {
-        fetch(`http://localhost:3001/review/delete/${id}`, { 
+    const deleteReview = (review) => {
+        fetch('http://localhost:3001/review/delete', { 
             method: 'DELETE', 
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': props.token //bearer token
             })
         })
         .then(() => props.fetchReviews()) 
@@ -25,7 +25,7 @@ const ReviewTable = (props) => {
                 <td>{review.rating}</td>
                 <td>
                     <Button color="warning" onClick={() => {props.editUpdateReview(review); props.updateOn()}}>Update</Button> 
-                    <Button color="danger" onClick={() => {deleteReview(review.id)}}>Delete</Button>
+                    <Button color="danger" onClick={() => {deleteReview(review)}}>Delete</Button>
                 </td>
               </tr>
             )

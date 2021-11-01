@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import CreateReview from './CreateReview';
+// import CreateReview from './CreateReview';
 import ReviewTable from './ReviewTable';
 import ReviewEdit from './EditReview';
+import ReviewCreate from './ReviewCreate';
 
 
 const ReviewIndex = (props) => {  
@@ -15,17 +16,18 @@ const ReviewIndex = (props) => {
             method: 'GET',
             headers: new Headers ({ 
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': props.token //bearer token goes here
             })
         }).then((res) => res.json()) 
         .then((reviewData) => {
             setReviews(reviewData)
         })
+        .catch(err => console.log(err))
     }
 
-    const editUpdateReview = (review) => { //HELP HERE TOO PLEASE
-        setReviewToUpdate(review);
-        console.log(review);
+    const editUpdateReview = (ReviewEdit) => { //HELP HERE TOO PLEASE
+        setReviewToUpdate(ReviewEdit);
+        console.log(ReviewEdit);
     }
 
     const updateOn = () => {
@@ -44,12 +46,12 @@ const ReviewIndex = (props) => {
         <Container>
             <Row>
                 <Col md="3">
-                    <CreateReview fetchReviews={fetchReviews} token={props.token}/>
+                    <ReviewCreate fetchReviews={fetchReviews} token={props.token}/>
                 </Col>
                 <Col md="9">
                     <ReviewTable reviews={reviews} editUpdateReview={editUpdateReview} updateOn={updateOn} fetchReviews={fetchReviews} token={props.token}/>
                 </Col>
-                {updateActive ? <ReviewEdit reviewToUpdate={reviewToUpdate} updateOff={updateOff} token={props.token} fetchWorkouts={fetchReviews}/> : <></>}
+                {updateActive ? <ReviewEdit reviewToUpdate={reviewToUpdate} updateOff={updateOff} token={props.token} fetchReviews={fetchReviews} reviews={reviews}/> : <></>}
             </Row>
         </Container>
     )

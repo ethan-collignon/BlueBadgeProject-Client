@@ -9,12 +9,13 @@ const CreateReview = (props) => {
 
     const handleSubmit = (e) => { 
         e.preventDefault();
+        console.log('submitButtonHit');
         fetch('http://localhost:3001/review/create/', {
             method: 'POST',
             body: JSON.stringify({review: {reviewTitle: reviewTitle, nameOfMovie: nameOfMovie, entry: entry, rating: rating}}), 
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token 
+                'Authorization': props.token
             })
         }).then((res) => res.json())
         .then((reviewData) => { 
