@@ -1,49 +1,53 @@
-import React, {useState} from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
-const ReviewEdit = (props) => {
-    const [editReviewTitle, setEditReviewTitle] = useState(props.workoutToUpdate.description);
-    const [editNameOfMovie, setEditNameOfMovie] = useState(props.workoutToUpdate.definition);
-    const [editEntry, setEditEntry] = useState(props.workoutToUpdate.result);
-    const [editRating, setEditRating] = useState(props.workoutToUpdate.result);
-    const reviewUpdate = (event, review) => {
-        event.preventDefault();
-        fetch(`http://localhost:3001/review/update/${props.reviewToUpdate.id}`, {
-            method: 'PUT',
-            body:JSON.stringify({review: {reviewTitle: editReviewTitle, nameOfMovie: editNameOfMovie, entry: editEntry, rating: editRating}}), //Appending an object to the body of the request with a form matching the input expected by our server
+import React from 'react';
+import { Table, Button } from 'reactstrap';
+import ReviewEdit from './EditReview';
+const ReviewTable = (props) => {
+    const deleteReview = (review) => {
+        fetch(`http://localhost:3001/review/delete`, {
+            method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.token
+                'Authorization': props.token //bearer token
             })
-        }).then((res) => {
-            props.fetchReviews();
-            props.updateOff();
+        })
+        .then(() => props.fetchReviews())
+    }
+    const reviewMapper = () => {
+        return props.reviews.map((review, user) => {
+            return(
+              <tr key={user} >  
+                <th scope="row">{review.id}</th>
+                <td>{review.reviewTitle}</td>
+                <td>{review.nameOfMovie}</td>
+                <td>{review.entry}</td>
+                <td>{review.rating}</td>
+                <td>
+                    <Button color="warning" onClick={() => {props.editUpdateReview(review); props.updateOn()}}>Update</Button>
+                    <Button color="danger" onClick={() => {deleteReview(review)}}>Delete</Button>
+                </td>
+              </tr>
+            )
         })
     }
     return(
-        <Modal isOpen={true}>
-            <ModalHeader>Create a Review</ModalHeader>
-            <ModalBody>
-                <Form onSubmit={reviewUpdate}>
-                    <FormGroup>
-                        <Label htmlFor="reviewTitle">Edit Review Title:</Label>    
-                        <Input name="reviewTitle" value={editReviewTitle} onChange={(e) => setEditReviewTitle(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="nameOfMovie">Edit Name of Movie:</Label>    
-                        <Input name="nameOfMovie" value={editNameOfMovie} onChange={(e) => setEditNameOfMovie(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="entry">Edit Definition:</Label>    
-                        <Input name="entry" value={editEntry} onChange={(e) => setEditEntry(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="rating">Edit Rating:</Label>    
-                        <Input name="rating" value={editRating} onChange={(e) => setEditRating(e.target.value)}/>
-                    </FormGroup>
-                    <Button type="submit">Update This Review</Button>
-                </Form>
-            </ModalBody>
-        </Modal>
+        <>
+        <h3>Review History</h3>
+        <hr/>
+        <Table striped>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Review Title</th>
+                    <th>Name of Movie</th>    
+                    <th>Entry</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                {reviewMapper()}
+            </tbody>
+        </Table>
+        </>
     )
 }
-export default ReviewEdit;
+export default ReviewTable;
