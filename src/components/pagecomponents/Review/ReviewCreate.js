@@ -13,8 +13,8 @@ const ReviewCreate = (props) => {
             method: 'POST',
             body: JSON.stringify({review: {reviewTitle: reviewTitle, nameOfMovie:nameOfMovie, entry:entry, rating:rating}}),
             headers: new Headers({
-                'Content-Type': 'application/json',
-                "Authorization": props.token
+                'Content-Type': 'application/json', 
+                "Authorization": props.token //add in bearer token
             })
         }).then((res) => res.json())
         .then((reviewData) => {

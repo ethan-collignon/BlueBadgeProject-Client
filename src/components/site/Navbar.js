@@ -3,8 +3,7 @@ import {Button, NavItem} from 'reactstrap'
 // import Home from './Auth1';
 import SplashPage from './SplashPage2';
 import MyReviews from './MyReviews4';
-import Logout from '../pagecomponents/Logout'
-import { checkPropTypes } from "prop-types";
+
 
 
 const Nav = (props) => {
@@ -13,7 +12,7 @@ const Nav = (props) => {
             <div className='navbar-list-styling'>
                 <ul className='navbar-list list-unstyled'>
                     {/* <li><Link to='/'>Home</Link></li> */}
-                    <li><Link to='/SplashPage2'>Splash Page</Link></li>
+                    <li><Link to='/'>Splash Page</Link></li>
                     <li><Link to='/MyReviews4'>My Reviews</Link></li>
                 </ul>
                 <NavItem>
@@ -22,7 +21,7 @@ const Nav = (props) => {
             </div>
            <div className='navbar-route'>
                <Switch>
-                   <Route exact path='/SplashPage2'><SplashPage /></Route>
+                   <Route exact path='/'><SplashPage /></Route>
                    <Route exact path='/MyReviews4'><MyReviews /></Route> 
                </Switch>
            </div>

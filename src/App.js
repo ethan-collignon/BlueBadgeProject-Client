@@ -3,14 +3,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Auth1 from './components/site/Auth1';
-import Nav from './components/site/Navbar';
-import SplashPage2 from './components/site/SplashPage2';
+// import Nav from './components/site/Navbar';
+// import SplashPage2 from './components/site/SplashPage2';
 import Splash from './components/site/SplashPage2';
-import SearchPage from './components/site/SearchPage3';
+// import SearchPage from './components/site/SearchPage3';
 
 
 function App() {
-  const [sessionToken, setSessionToken] = useState('');
+  const [sessionToken, setSessionToken] = useState(undefined);
   console.log(sessionToken);
 
   useEffect(() => {
@@ -27,21 +27,21 @@ function App() {
 
   const clearLocalStorage = () => {
     localStorage.clear();
-    setSessionToken('');
+    setSessionToken(undefined);
   }
 
   const protectedView = () => {
-    return sessionToken === localStorage.getItem('token') ? <Splash token={sessionToken} /> : <Auth1 updateToken ={updateToken} />;
+    return (sessionToken  ? <Splash token={sessionToken} clearLocalStorage={clearLocalStorage} /> : <Auth1 updateToken={updateToken} />);
   };
 
 
   return (
     <div className="App">
-      {protectedView()}
-    <Router>
-      <Nav clearLocalStorage={clearLocalStorage}/>
-    </Router>
       
+    <Router>
+    {protectedView()}
+      {/* <Nav clearLocalStorage={clearLocalStorage}/> */}
+    </Router>
     </div>
   );
 }

@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import ReviewCreate from '../pagecomponents/Review/ReviewCreate';
+import Nav from './Navbar';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 
-const Splash = () => {
+
+const Splash = (props) => {
  
     return (
         <div>
-            <ReviewCreate />
-            Test2
+            {/*<ReviewCreate /> */}
+             <Nav clearLocalStorage={props.clearLocalStorage} /> 
         </div>
       
     
