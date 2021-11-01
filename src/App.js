@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
-import {BroswerRouter as Router} from 'react-router-dom';
 import Auth from './components/site/Auth';
 import ReviewIndex from './components/pagecomponents/Review/ReviewIndex';
-import Splash from './components/site/SplashPage2';
 
 // import Navbar from './components/site/Navbar';
 

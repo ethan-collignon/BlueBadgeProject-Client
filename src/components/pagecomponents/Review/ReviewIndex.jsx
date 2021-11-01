@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-// import CreateReview from './CreateReview';
 import ReviewTable from './ReviewTable';
 import ReviewEdit from './EditReview';
 import ReviewCreate from './ReviewCreate';
+import MoviePage from '../../site/MoviePage';
 
 
 const ReviewIndex = (props) => {  
@@ -47,6 +47,12 @@ const ReviewIndex = (props) => {
             <Row>
                 <Col md="3">
                     <ReviewCreate fetchReviews={fetchReviews} token={props.token}/>
+                </Col>
+                {/* <Col md="3">
+                    <SearchArea/>
+                </Col> */}
+                <Col md="3">
+                    <MoviePage/>
                 </Col>
                 <Col md="9">
                     <ReviewTable reviews={reviews} editUpdateReview={editUpdateReview} updateOn={updateOn} fetchReviews={fetchReviews} token={props.token}/>
