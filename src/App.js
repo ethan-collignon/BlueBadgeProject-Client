@@ -9,6 +9,7 @@ import Splash from './components/site/SplashPage2';
 // import SearchPage from './components/site/SearchPage3';
 
 
+
 function App() {
   const [sessionToken, setSessionToken] = useState(undefined);
   console.log(sessionToken);
