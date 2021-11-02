@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Button, NavItem, Container, Row, Col } from 'reactstrap';
 import ReviewTable from './ReviewTable';
 import ReviewEdit from './EditReview';
 import ReviewCreate from './ReviewCreate';
@@ -24,6 +24,11 @@ const ReviewIndex = (props) => {
         })
         .catch(err => console.log(err))
     }
+    
+    // const clearLocalStorage = () => {
+    //     localStorage.clear();
+    //     setSessionToken(undefined);
+    //   }
 
     const editUpdateReview = (ReviewEdit) => { //HELP HERE TOO PLEASE
         setReviewToUpdate(ReviewEdit);
@@ -48,10 +53,10 @@ const ReviewIndex = (props) => {
                 <Col md="3">
                     <ReviewCreate fetchReviews={fetchReviews} token={props.token}/>
                 </Col>
-                {/* <Col md="3">
-                    <SearchArea/>
-                </Col> */}
                 <Col md="3">
+                {/* <NavItem>
+                <Button onClick={props.clearLocalStorage}>Logout</Button>
+                </NavItem> */}
                     <MoviePage/>
                 </Col>
                 <Col md="9">
@@ -60,6 +65,7 @@ const ReviewIndex = (props) => {
                 {updateActive ? <ReviewEdit reviewToUpdate={reviewToUpdate} updateOff={updateOff} token={props.token} fetchReviews={fetchReviews} reviews={reviews}/> : <></>}
             </Row>
         </Container>
+        
     )
 }
 
