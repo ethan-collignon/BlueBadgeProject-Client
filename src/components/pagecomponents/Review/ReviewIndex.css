@@ -2,6 +2,19 @@ body{
     background-color: slategray;
 }
 
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 60px;
+}
+
+.power {
+    max-inline-size: 50px;
+    padding-top: 30px;
+    padding-right: 100px;
+}
 
 table{
     background-color: lightgrey;
