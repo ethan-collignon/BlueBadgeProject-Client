@@ -51,7 +51,7 @@ const ReviewIndex = (props) => {
     }, []) 
 
     return(
-        < div style={{backgroundColor: "#bc2026"}}>
+        < div style={{backgroundColor: "slategrey"}}>
             <div class="header">
             <div><img src={gif} class="img" alt='loading' height='100'></img></div>
             <h1><u>Movie Review App</u></h1>
@@ -64,7 +64,9 @@ const ReviewIndex = (props) => {
             </Button>
             </div>
             </div>
-            <p>Welcome to Sockem Boppers movie review app. Once you create an account you can search the latest Movies and don’t worry if you’re more into the classics, foreign, or whatever your taste is we got you covered. Sockem Boppers also allows you to create reviews and rating your favorite masterpieces, invite your family and friends so you can see each other’s reviews and ratings and later argue about around the dinner table or during an intense game of monopoly on family/friend game night. So why not give our App a try today and get geared up for those disagreements headed your way.</p>
+            <div class="mainText">
+            <p>Welcome to Sockem Boppers movie review app, where you can search the latest movies for a short summary and see reviews. Sockem Boppers also allows you to create reviews of your own and leave a rating for movies you have seen.</p>
+            </div>
         <Container style={{backgroundColor: "slategrey", borderRadius: "2px"}}>
             <Row>
                 <Col width="35">

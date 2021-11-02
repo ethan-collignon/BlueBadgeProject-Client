@@ -19,3 +19,15 @@ body{
 table{
     background-color: lightgrey;
 }
+
+
+.mainText {
+    text-align: center;
+    padding-top: 0;
+    padding-left: 200px;
+    padding-right: 200px;
+    border-style: dashed;
+    border-color: black;
+    margin-left: 200px;
+    margin-right: 200px;
+}
