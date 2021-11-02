@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
-import ReviewEdit from './EditReview';
+// import ReviewEdit from './EditReview';
 
 const ReviewTable = (props) => {
     const deleteReview = (id) => {
