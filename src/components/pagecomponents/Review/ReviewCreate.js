@@ -20,10 +20,10 @@ const ReviewCreate = (props) => {
         }).then((res) => res.json())
         .then((reviewData) => {
             console.log(reviewData);
+            setRating('');
             setReviewTitle('');
             setNameOfMovie('');
             setEntry('');
-            setRating('');
             props.fetchReviews();
         })
     }     
@@ -34,23 +34,23 @@ return (
         <h3>Create a Review!</h3>
         <Form onSubmit={handleSubmit}>
                 <FormGroup>
+                    <Label htmlFor="rating"/>
+                    <Input placeholder="Rating" name="rating" value={rating} onChange={(e) => setRating(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
                     <Label htmlFor="reviewTitle"/>
-                    <Input name="reviewTitle" value={reviewTitle} onChange={(e) => setReviewTitle(e.target.value)} /> 
+                    <Input placeholder="Review Title" name="reviewTitle" value={reviewTitle} onChange={(e) => setReviewTitle(e.target.value)} /> 
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="nameOfMovie"/>
-                    <Input  name="nameOfMovie" value={nameOfMovie} onChange={(e) => setNameOfMovie(e.target.value)} />
+                    <Input placeholder="Name of Movie" name="nameOfMovie" value={nameOfMovie} onChange={(e) => setNameOfMovie(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="entry"/>
-                    <Input name="entry" value={entry} onChange={(e) => setEntry(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="rating"/>
-                    <Input name="rating" value={rating} onChange={(e) => setRating(e.target.value)} />
+                    <Input placeholder="Review Entry" name="entry" value={entry} onChange={(e) => setEntry(e.target.value)} />
                 </FormGroup>
                 <br/>
-                <Button type="submit">Click to Submit</Button> 
+                <Button outline color="danger"  type="submit">Click to Submit</Button> 
             </Form>
     </>
     

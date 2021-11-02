@@ -28,6 +28,10 @@ const ReviewEdit = (props) => {
             <ModalBody>
                 <Form onSubmit={reviewUpdate}>
                     <FormGroup>
+                        <Label htmlFor="rating">Edit Rating:</Label>    
+                        <Input name="rating" value={editRating} onChange={(e) => setEditRating(e.target.value)}/>
+                    </FormGroup>
+                    <FormGroup>
                         <Label htmlFor="reviewTitle">Edit Review Title:</Label>    
                         <Input name="reviewTitle" value={editReviewTitle} onChange={(e) => setEditReviewTitle(e.target.value)}/>
                     </FormGroup>
@@ -38,10 +42,6 @@ const ReviewEdit = (props) => {
                     <FormGroup>
                         <Label htmlFor="entry">Edit Entry:</Label>    
                         <Input name="entry" value={editEntry} onChange={(e) => setEditEntry(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="rating">Edit Rating:</Label>    
-                        <Input name="rating" value={editRating} onChange={(e) => setEditRating(e.target.value)}/>
                     </FormGroup>
                     <Button type="submit">Update This Review</Button>
                 </Form>

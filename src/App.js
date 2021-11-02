@@ -26,8 +26,7 @@ const updateLocalStorage = (newToken) => {
   };
   return (
     <div className="App">
-      {/*<h1>This is a test.</h1>
-      {sessionToken} */}
+      {/* {sessionToken} */}
       {/* <Navbar clearLocalStorage={clearLocalStorage} /> */}
       {viewConductor()}
     </div>
