@@ -18,12 +18,18 @@ const updateLocalStorage = (newToken) => {
   localStorage.setItem('token', newToken);
   setSessionToken(newToken);
 };
+
+const clearLocalStorage = () => {
+  localStorage.clear();
+  setSessionToken(undefined);
+}
   const mainApp = (
-    <ReviewIndex token={sessionToken} updateLocalStorage={updateLocalStorage} />
+    <ReviewIndex token={sessionToken} updateLocalStorage={updateLocalStorage} clearLocalStorage={clearLocalStorage} />
   )
   const viewConductor = () => {
     return sessionToken !== undefined ? mainApp : <Auth updateLocalStorage ={updateLocalStorage} />;
   };
+  
   return (
     <div className="App">
       {/* {sessionToken} */}
