@@ -98,6 +98,7 @@ const Auth = (props) => {
         width="400"
         className="welcome"
       />
+      
       <img
         src={intro}
         alt="loading..."
@@ -107,7 +108,10 @@ const Auth = (props) => {
       />
     </Form>
     <br />
+    <br />
+    <br />
     
+    <br />
     <br />
     </body>
   );

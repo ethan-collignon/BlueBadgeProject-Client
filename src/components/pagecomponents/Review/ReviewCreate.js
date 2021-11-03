@@ -35,15 +35,15 @@ return (
         <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="rating"/>
-                    <Input placeholder="Rating" style={{textAlign: "center", width: "400px", marginLeft: "73px"}} name="rating" type="number" value={rating} onChange={(e) => setRating(e.target.value)} />
+                    <Input placeholder="Rating" style={{textAlign: "center", width: "400px", marginLeft: "auto", marginRight: "auto"}} name="rating" type="number" value={rating} onChange={(e) => setRating(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="reviewTitle"/>
-                    <Input placeholder="Review Title" style={{textAlign: "center", width: "400px", marginLeft: "73px"}} name="reviewTitle" value={reviewTitle} onChange={(e) => setReviewTitle(e.target.value)} /> 
+                    <Input placeholder="Review Title" style={{textAlign: "center", width: "400px", marginLeft: "auto", marginRight: "auto"}} name="reviewTitle" value={reviewTitle} onChange={(e) => setReviewTitle(e.target.value)} /> 
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="nameOfMovie"/>
-                    <Input placeholder="Name of Movie" style={{textAlign: "center", width: "400px", marginLeft: "73px"}} name="nameOfMovie" value={nameOfMovie} onChange={(e) => setNameOfMovie(e.target.value)} />
+                    <Input placeholder="Name of Movie" style={{textAlign: "center", width: "400px", marginLeft: "auto", marginRight: "auto"}} name="nameOfMovie" value={nameOfMovie} onChange={(e) => setNameOfMovie(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="entry"/>

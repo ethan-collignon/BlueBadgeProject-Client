@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 
 const Movie = styled.div`
-margin-left: 125px;
+margin-left: auto;
+margin-right: auto;
 margin-top: 10px;
 width: 300px;
 border-radius: 5px;
