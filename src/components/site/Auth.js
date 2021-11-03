@@ -48,9 +48,8 @@ const Auth = (props) => {
       .catch((err) => console.log(err));
   };
   return (
+    <body style={{backgroundColor: "grey"}}>
     <Form className="login-form">
-      <Button onClick={loginToggle}>Login/Signup</Button>
-      <br />
       <h1>{title()}</h1>
       <FormGroup>
         <Label>Email</Label>
@@ -77,10 +76,18 @@ const Auth = (props) => {
       >
         Submit
       </Button>
+
+      <br />
+
+      <br />
+
+      <p onClick={loginToggle} style={{cursor: "pointer"}}><b><u>Login/Signup</u></b></p>
       <div className="text-center pt-3">
         Or continue with your social account
       </div>
+      <div>
       <FacebookLoginButton className="mt-3 mb-3" align="center" />
+      </div>
       <div className="text-center">
         <a href="/forgot-password">Forgot Password?</a>
       </div>
@@ -99,6 +106,10 @@ const Auth = (props) => {
         className="intro"
       />
     </Form>
+    <br />
+    
+    <br />
+    </body>
   );
 };
 export default Auth;

@@ -6,6 +6,7 @@ import ReviewCreate from './ReviewCreate';
 import MoviePage from '../../site/MoviePage';
 import './ReviewIndex.css';
 import gif from '..//..//..//assets/MOVIES.gif';
+import sbGif from '..//..//..//assets/sockembopper.gif'
 
 
 
@@ -50,7 +51,7 @@ const ReviewIndex = (props) => {
         < div style={{backgroundColor: "slategrey"}}>
             <div class="header">
             <div><img src={gif} class="img" alt='loading' height='100'></img></div>
-            <h1><u>Movie Review App</u></h1>
+            <h1><img src={sbGif} class="img2" alt='loading' height='100'></img></h1>
             <div class="power">
             <Button class="bi bi-power" style={{backgroundColor: "red"}} width="10" height="10" onClick={() => props.clearLocalStorage() /*HELP WITH THIS*/}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
